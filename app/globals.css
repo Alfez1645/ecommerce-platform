@@ -56,3 +56,8 @@ select {
 button {
   cursor: pointer;
 }
+
+.activePage {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+}
