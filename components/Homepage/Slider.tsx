@@ -33,7 +33,7 @@ export default function Slider(){
             <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className="h-full w-full object-cover object-center transition-opacity duration-500"/>
+                className="h-full w-full object-cover object-top transition-opacity duration-500"/>
             <div 
             className="absolute inset-0 bg-linear-to-r from-black/75 via-black/40 to-transparent">
                 <div 

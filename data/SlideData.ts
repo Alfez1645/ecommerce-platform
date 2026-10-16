@@ -17,7 +17,7 @@ const sliderData:slider[] = [
     btnText: "Shop Now",
     btnLink: "/shop",
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1920&q=90",
+      "/images/Gemini_Generated_Image_uzyaquzyaquzyaqu.png",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const sliderData:slider[] = [
     btnText: "Explore Now",
     btnLink: "/electronics",
     image:
-      "https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1920&q=90",
+      "/images/Gemini_Generated_Image_26qopz26qopz26qo.png",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const sliderData:slider[] = [
     btnText: "Shop Beauty",
     btnLink: "/beauty",
     image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1920&q=90",
+      "/images/Gemini_Generated_Image_lrcmz1lrcmz1lrcm.png",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const sliderData:slider[] = [
     btnText: "Discover More",
     btnLink: "/home",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=90",
+      "/images/Gemini_Generated_Image_i0rdzvi0rdzvi0rd.png",
   },
   {
     id: 5,
@@ -57,9 +57,10 @@ const sliderData:slider[] = [
     btnText: "Shop Collection",
     btnLink: "/shoes",
     image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1920&q=90",
-  },
+      "/images/Gemini_Generated_Image_155kzo155kzo155k.png",
+  }    
 ];
+
 
 export default sliderData;
 
