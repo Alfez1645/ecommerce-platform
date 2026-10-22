@@ -1,5 +1,6 @@
 import { HomeProduct } from "@/types/product";
-import { Heart, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
+import FavoriteBtn from "../Favoritebtn";
 
 export function ProductCard({item}: { item: HomeProduct }){
     return(
@@ -12,7 +13,7 @@ export function ProductCard({item}: { item: HomeProduct }){
         />
         <div className="absolute top-0 left-0 flex justify-between p-3 w-full">
             <div className="text-xs bg-primary text-white h-fit p-1 rounded-lg">{item.tag}</div>
-            <Heart className=" bg-white p-1 rounded-full" size={25}/>
+            <FavoriteBtn item={item} />
         </div>
     </div>
     <div className="p-2 min-w-0 flex flex-col gap-1">
