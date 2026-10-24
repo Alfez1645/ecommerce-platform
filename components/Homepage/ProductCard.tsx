@@ -1,6 +1,7 @@
 import { HomeProduct } from "@/types/product";
 import { Star } from 'lucide-react';
 import FavoriteBtn from "../Favoritebtn";
+import AddToCart from "../AddToCartBtn";
 
 export function ProductCard({item}: { item: HomeProduct }){
     return(
@@ -25,6 +26,7 @@ export function ProductCard({item}: { item: HomeProduct }){
             <p className="text-sm line-through text-gray-500">₹{item.originalPrice}</p>
         </div>
         <button className="w-fit text-sm text-primary">View Details →</button>
+        <AddToCart item={item}/>
     </div>
 </div>
     )

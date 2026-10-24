@@ -4,7 +4,7 @@ import WishListFooter from "./WishListFooter";
 
 export default function WishListPage() {
   return (
-    <main className="min-h-screen">
+    <main className="flex min-h-screen flex-col">
       <WishListBanner />
       <WishListCard />
       <WishListFooter />
