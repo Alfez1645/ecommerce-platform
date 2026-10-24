@@ -1,33 +1,14 @@
 'use client'
-import { addFavorite, removeFavorite, setFavorites } from '@/lib/features/FavoritesSlider';
+import { addFavorite, removeFavorite} from '@/lib/features/FavoritesSlider';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { RootState } from '@/lib/store';
 import { HomeProduct } from '@/types/product';
 import { Heart } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
 export default function FavoriteBtn({item}: { item: HomeProduct }){
 
     const favorite = useAppSelector((state:RootState) => state.favorite.favorite)
     const dispatch = useAppDispatch();
-
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        const saved = localStorage.getItem("favoriteItem");
-
-        if (saved) {
-            dispatch(setFavorites(JSON.parse(saved)));
-        }
-
-        setLoaded(true);
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (loaded) {
-            localStorage.setItem("favoriteItem", JSON.stringify(favorite));
-        }
-    }, [favorite, loaded]);
 
     return (
         favorite.some((fav) => fav.id === item.id) ? (

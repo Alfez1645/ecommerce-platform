@@ -5,7 +5,7 @@ import AddToCart from "../AddToCartBtn";
 
 export function ProductCard({item}: { item: HomeProduct }){
     return(
-        <div className="bg-secondary rounded-2xl overflow-hidden shrink-0 w-44 md:w-52 lg:w-70 cursor-pointer transition-transform duration-300 hover:scale-102 hover:bg-[#e9ddff] hover:shadow-md ">
+        <div className="bg-secondary rounded-2xl overflow-hidden w-44 md:w-52 lg:w-70 cursor-pointer transition-transform duration-300 hover:scale-102 hover:bg-[#e9ddff] hover:shadow-md ">
     <div className="w-full aspect-square relative p-1">
         <img
             src={item.image}
@@ -17,9 +17,9 @@ export function ProductCard({item}: { item: HomeProduct }){
             <FavoriteBtn item={item} />
         </div>
     </div>
-    <div className="p-2 min-w-0 flex flex-col gap-1">
+    <div className="p-2 min-w-0 flex flex-col gap-1 flex-1">
         <p className="text-xs text-primary">{item.brand}</p>
-        <h2 className="wrap-break-word text-md font-semibold leading-tight lg:text-lg">{item.title}</h2>
+        <h2 className="wrap-break-word text-md font-semibold leading-tight lg:text-lg line-clamp-2 min-h-10">{item.title}</h2>
         <div className="flex gap-0.5 text-xs items-center text-gray-500"><Star size={11} className="text-yellow-500" />{item.rating}</div>
         <div className="flex gap-2 items-end">
             <h3 className="text-md lg:text-lg">₹{item.price}</h3>
