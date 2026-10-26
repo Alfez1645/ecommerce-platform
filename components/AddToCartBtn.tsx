@@ -1,8 +1,7 @@
 'use client'
-import { addCart, setCart } from "@/lib/features/CartSlice";
-import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { addCart } from "@/lib/features/CartSlice";
+import { useAppDispatch } from "@/lib/hooks";
 import { HomeProduct } from "@/types/product";
-import { useEffect, useState } from "react";
 
 export default function AddToCart({item}: { item: HomeProduct }){
 
@@ -11,6 +10,9 @@ export default function AddToCart({item}: { item: HomeProduct }){
     return(
         <button
         className="bg-primary  text-white text rounded-2xl"
-         onClick={() =>dispatch(addCart(item))}>Add cart</button>
+         onClick={(event) =>{
+            event.stopPropagation();
+            dispatch(addCart(item))
+         }}>Add cart</button>
     )
 }
