@@ -26,7 +26,7 @@ export const searchProducts = createAsyncThunk(
 
     return data.products.map((product:any):HomeProduct => ({
         id: product.id,
-        brand: product.brand,
+        brand: product.category,
         title: product.title,
         image: product.thumbnail,
         rating: product.rating,

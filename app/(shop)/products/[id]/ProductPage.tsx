@@ -5,13 +5,13 @@ import { HomeProduct } from "@/types/product";
 import { Star } from "lucide-react";
 import AddProduct from "./AddProduct";
 
-export default function ProductPage({item , img }: { item: HomeProduct , img:string}){
+export default function ProductPage({item}: { item: HomeProduct }){
     return(
         <div className="grid grid-cols-1 items-center gap-7 p-5 md:grid-cols-2 md:p-10">
             <div className="flex flex-col gap-5">
                 <div className="h-80 w-full overflow-hidden rounded-2xl bg-secondary md:h-96 relative">
                 <img
-                src={img}
+                src={item.image}
                 alt={item.title}
                 className="h-full w-full object-contain"
                  />
@@ -23,21 +23,21 @@ export default function ProductPage({item , img }: { item: HomeProduct , img:str
             <div className="grid h-20 grid-cols-3 gap-3">
                 <div className="overflow-hidden rounded-lg bg-secondary">
                     <img
-                    src={img}
+                    src={item.image}
                     alt={item.title}
                     className="h-full w-full object-contain"
                     />
                 </div>
                 <div className="overflow-hidden rounded-lg bg-secondary">
                     <img
-                    src={img}
+                    src={item.image}
                      alt={item.title}
                     className="h-full w-full object-contain"
                     />
                 </div>
                 <div className="overflow-hidden rounded-lg bg-secondary">
                     <img
-                     src={img}
+                     src={item.image}
                     alt={item.title}
                      className="h-full w-full object-contain"
                      />

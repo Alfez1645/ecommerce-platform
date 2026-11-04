@@ -2,6 +2,7 @@ import { allProducts } from "@/data/allProducts";
 import { notFound } from "next/navigation";
 import PreviousButton from "./PreviousButto";
 import ProductPage from "./ProductPage";
+import { HomeProduct } from "@/types/product";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -9,25 +10,41 @@ type Props = {
 
 export default async function ProductDetailsPage({params}: Props) {
   const { id } = await params;
-  let product ;
-  let img
+  let product: HomeProduct | undefined;
 
   const localProduct = allProducts.find(
     (item) => item.id === Number(id)
   );
 
   if (localProduct) {
-    product = localProduct;
-    img = product.image
+    product = {
+      id: localProduct.id,
+      brand: localProduct.brand,
+      image: localProduct.image,
+      title: localProduct.title,
+      rating: localProduct.rating,
+      price: localProduct.price,
+      originalPrice: localProduct.originalPrice,
+      tag: localProduct.tag
+    }
 } else {
   const response = await fetch(
       `https://dummyjson.com/products/${id}`
     );
 
     if (response.ok) {
-      product = await response.json();
-      img = product.thumbnail
-}
+      let item = await response.json();
+      product = {
+        id: item.id,
+        brand: item.category,
+        image: item.thumbnail,
+        title: item.title,
+        rating: item.rating,
+        price: Math.round(item.price * 90),
+        originalPrice: Math.round((item.price / (1 - item.discountPercentage / 100)) * 90),
+        tag: item.category,
+      }
+    }
 
   if (!product) {
     notFound();
@@ -38,7 +55,7 @@ export default async function ProductDetailsPage({params}: Props) {
   return (
     <main>
         <PreviousButton />
-        <ProductPage item={product} img={img}/>
+        <ProductPage item={product}/>
     </main>
   );
 }

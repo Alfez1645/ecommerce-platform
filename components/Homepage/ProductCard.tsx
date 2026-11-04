@@ -5,6 +5,7 @@ import AddToCart from "../AddToCartBtn";
 import Link from "next/link";
 
 export function ProductCard({item}: { item: HomeProduct }){
+    
     return(
         <div className="bg-secondary rounded-2xl shrink-0 w-44 md:w-52 lg:w-70 cursor-pointer transition-transform duration-300 hover:scale-102 hover:bg-[#e9ddff] hover:shadow-md ">
     <div className="w-full aspect-square relative p-1">

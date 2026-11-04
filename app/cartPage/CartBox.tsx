@@ -1,6 +1,5 @@
 "use client";
-import { ProductCard } from "@/components/Homepage/ProductCard";
-import { CartItem, ClearCart } from "@/lib/features/CartSlice";
+import { ClearCart } from "@/lib/features/CartSlice";
 import CartCards from "./CartCard";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import OrderSummary from "./OrderSummary";
